@@ -3,5 +3,9 @@
 
     <string name="app_name">CloudStore</string>
     <string name="action_settings">Settings</string>
+    <string name="side_b005">買賣狀態</string>
+    <string name="side_b006">結帳</string>
+    <string name="car_b001">取消購買</string>
+    <string name="car_b002">確定購買</string>
 
 </resources>

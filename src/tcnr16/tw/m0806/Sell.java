@@ -24,6 +24,7 @@ public class Sell extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sell);
+		getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.vblue));
 		initActionBar();//左上小按鈕返回圖示的開關
 
 		mNav = new SimpleSideDrawer(this);

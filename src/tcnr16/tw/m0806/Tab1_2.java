@@ -22,6 +22,7 @@ public class Tab1_2 extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tab1);
+		getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.vblue));
 		 initActionBar();
 		setupViewComponent();
 	}

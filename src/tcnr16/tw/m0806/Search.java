@@ -23,6 +23,7 @@ public class Search extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.search);
+		getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.vblue));
 		mNav = new SimpleSideDrawer(this);
 		mNav.setLeftBehindContentView(R.layout.leftmenu);
 		initActionBar();

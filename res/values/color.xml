@@ -16,5 +16,6 @@
     <drawable name="silver">#C0C0C0</drawable><drawable name="teal">#008080</drawable>
     <drawable name="white">#FFFFFF</drawable>
     <drawable name="yellow">#FFFF00</drawable>
+    <drawable name="vblue">#0848AF</drawable>
     
 </resources>
