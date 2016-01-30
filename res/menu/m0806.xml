@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="tcnr16.tw.m0806.M0806" >
+
+    <item
+        android:id="@+id/item1"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/item1"/>
+    <item
+        android:id="@+id/item2"
+        android:title="@string/item2">
+    </item>
+    <item
+        android:id="@+id/item3"
+        android:title="@string/item3" android:showAsAction="ifRoom">
+    </item>
+
+</menu>
