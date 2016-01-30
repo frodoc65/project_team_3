@@ -4,8 +4,8 @@ import com.navdrawer.SimpleSideDrawer;
 
 import android.app.*;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.*;
 import android.view.View.*;
 import android.widget.*;
@@ -85,8 +85,13 @@ public class M0806 extends TabActivity {
 				startActivity(it);
 				break;
 			case R.id.side_b003://搜尋商品
+				it.setClass(M0806.this, Search.class);
+				startActivity(it);
 				break;
 			case R.id.side_b004://朋友
+				Uri uri = Uri.parse("http://www.facebook.com");
+				it = new Intent(Intent.ACTION_VIEW, uri);
+				startActivity(it);
 				break;
 			}
 		}

@@ -18,6 +18,10 @@
 <string name="sell_t003">商品價格</string>
 <string name="sell_t004">商品分類</string>
 <string name="sell_t005">圖片上傳</string>
+<string name="search_t001">快速搜尋</string>
+<string name="search_t002">多重搜尋</string>
+<string name="search_t002_01">價格範圍</string>
+<string name="search_t002_02">商品分類</string>
 
 
     
