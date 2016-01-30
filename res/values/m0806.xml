@@ -13,6 +13,11 @@
 <string name="sign_t001">帳號:</string>
 <string name="sign_b001">登入</string>
 <string name="sign_b002">取消</string>
+<string name="sell_t001">詳細資料</string>
+<string name="sell_t002">商品名稱</string>
+<string name="sell_t003">商品價格</string>
+<string name="sell_t004">商品分類</string>
+<string name="sell_t005">圖片上傳</string>
 
 
     

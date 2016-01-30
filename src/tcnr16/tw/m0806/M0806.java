@@ -5,6 +5,7 @@ import com.navdrawer.SimpleSideDrawer;
 import android.app.*;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.*;
 import android.view.View.*;
 import android.widget.*;
@@ -15,11 +16,19 @@ import android.widget.TabHost.TabSpec;
 public class M0806 extends TabActivity {
 	private SimpleSideDrawer mNav;
 	private Dialog mLoginDlg;	
+	private Function function;
+	//--------------側邊按鈕宣告--------------------------------------------
+	private Button side_b001,side_b002,side_b003,side_b004;
+	//--------------滑動-------------------------------------------------
+	private float x1,x2,y1,y2,xc,yc;
+	private float xr=90,yr=160;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.m0806);
         initActionBar();//左上小按鈕返回圖示的開關
+        setTitle("CloudStore");
 
 		mNav = new SimpleSideDrawer(this);
 		mNav.setLeftBehindContentView(R.layout.leftmenu);
@@ -30,8 +39,9 @@ public class M0806 extends TabActivity {
 	private void initActionBar() {
 		  getActionBar().setDisplayHomeAsUpEnabled(true);
 	      getActionBar().setHomeButtonEnabled(true);
+	     
 	}
-	private void setupviewcomponent() {
+	public void setupviewcomponent() {
 		//---------------tab的標頭於此宣告和添加和改名(第一層)------------------
 		//---------------tab1-----------------------------------------
 		TabHost tabHost = getTabHost();
@@ -49,12 +59,62 @@ public class M0806 extends TabActivity {
     	spec.setIndicator("熱門商品",
     			getResources().getDrawable(android.R.drawable.ic_dialog_alert));
     	spec.setContent(it);
-    	tabHost.addTab(spec);
-    	
+    	tabHost.addTab(spec); 	
     	tabHost.setCurrentTab(0);
+    	//-----------------側邊按鈕宣告-----------------------------------------
+    	side_b001 = (Button)findViewById(R.id.side_b001);
+    	side_b002 = (Button)findViewById(R.id.side_b002);
+    	side_b003 = (Button)findViewById(R.id.side_b003);
+    	side_b004 = (Button)findViewById(R.id.side_b004);
+    	side_b001.setOnClickListener(side_b001on);
+    	side_b002.setOnClickListener(side_b001on);
+    	side_b003.setOnClickListener(side_b001on);
+    	side_b004.setOnClickListener(side_b001on);
 	}
-
-   
+	//----------------------------側邊欄按鈕監聽-----------------------------------
+	private OnClickListener side_b001on = new OnClickListener(){
+		Intent it = new Intent();
+		@Override
+		public void onClick(View v) {
+			switch(v.getId()){
+			case R.id.side_b001://瀏覽商品
+				Toast.makeText(M0806.this, "已經在本頁了喔!!!!", Toast.LENGTH_SHORT).show();
+				break;
+			case R.id.side_b002://賣東西
+				it.setClass(M0806.this, Sell.class);
+				startActivity(it);
+				break;
+			case R.id.side_b003://搜尋商品
+				break;
+			case R.id.side_b004://朋友
+				break;
+			}
+		}
+	};
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		if(event.getAction() == MotionEvent.ACTION_DOWN){
+			//action_down手指按下
+			x1=event.getX();
+			y1=event.getY();
+		}
+		if(event.getAction() == MotionEvent.ACTION_UP){
+			//action_up手指離開時
+			x2=event.getX();
+			y2=event.getY();
+			xc=x2-x1;
+			yc=y2-y1;
+			if(xc >   xr)    ctlnext();//右
+			if(xc < -xr)    ctlprev();//左
+		}
+		return super.onTouchEvent(event);
+	}
+	public void ctlprev() {//左
+		
+	}
+	private void ctlnext() {//右
+		
+	}
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
