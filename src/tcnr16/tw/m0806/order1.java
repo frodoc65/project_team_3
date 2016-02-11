@@ -16,8 +16,7 @@ import android.widget.*;
 public class order1 extends ListActivity {
 	private SimpleSideDrawer mNav;
 	private Dialog mLoginDlg;	
-	private Button side_b001, side_b002, side_b003, side_b004, side_b005,
-	side_b005_1, side_b005_2, side_b006;
+	private Button side_b005_1, side_b005_2;
 	private Function function;
 	
 	 private ArrayList<String> recSet;
@@ -44,30 +43,28 @@ public class order1 extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.transaction);
 		initActionBar();//左上小按鈕返回圖示的開關
-
+		getActionBar().setBackgroundDrawable(
+				getResources().getDrawable(R.drawable.vblue));
+		setTitle("													Cloud Store");
 		mNav = new SimpleSideDrawer(this);
 		mNav.setLeftBehindContentView(R.layout.leftmenu);
 		setupviewcomponent();
 	}
 	private void setupviewcomponent() {
 		//-----------------側邊按鈕宣告-----------------------------------------
-		side_b001 = (Button) findViewById(R.id.side_b001);
-		side_b002 = (Button) findViewById(R.id.side_b002);
-		side_b003 = (Button) findViewById(R.id.side_b003);
-		side_b004 = (Button) findViewById(R.id.side_b004);
-		side_b005 = (Button) findViewById(R.id.side_b005);
+		for(int i=1;i<7;i++){
+			String idname = "side_b0"+String.format("%02d", i);
+			
+			int resId = getResources().getIdentifier(idname, "id", getPackageName());
+			Button btn = ((Button)findViewById(resId));
+			btn.setOnClickListener(side_b001on);
+			
+		}
 		side_b005_1 = (Button) findViewById(R.id.side_b005_1);
 		side_b005_2 = (Button) findViewById(R.id.side_b005_2);
-		side_b006 = (Button) findViewById(R.id.side_b006);
 		// ------------------------------------------------
-		side_b001.setOnClickListener(side_b001on);
-		side_b002.setOnClickListener(side_b001on);
-		side_b003.setOnClickListener(side_b001on);
-		side_b004.setOnClickListener(side_b001on);
-		side_b005.setOnClickListener(side_b001on);
 		side_b005_1.setOnClickListener(side_b001on);
 		side_b005_2.setOnClickListener(side_b001on);
-		side_b006.setOnClickListener(side_b001on);
 		// --------------------------------------------------
 		side_b005_1.setVisibility(View.GONE);
 		side_b005_2.setVisibility(View.GONE);
@@ -111,12 +108,12 @@ public class order1 extends ListActivity {
 		// ----------------------------側邊欄按鈕監聽-----------------------------------
 			private OnClickListener side_b001on = new OnClickListener() {
 				Intent it = new Intent();
-
+				int count=0;
 				@Override
 				public void onClick(View v) {
 					switch (v.getId()) {
 					case R.id.side_b001:// 瀏覽商品
-						it.setClass(order1.this, M0806.class);
+						it.setClass(order1.this, Tab1.class);
 						startActivity(it);
 						break;
 					case R.id.side_b002:// 賣東西
@@ -133,8 +130,15 @@ public class order1 extends ListActivity {
 						startActivity(it);
 						break;
 					case R.id.side_b005:// 買賣狀態
-						side_b005_1.setVisibility(View.VISIBLE);
-						side_b005_2.setVisibility(View.VISIBLE);
+						if (count == 1) {
+							side_b005_1.setVisibility(View.GONE);
+							side_b005_2.setVisibility(View.GONE);
+							count = 0;
+						} else {
+							side_b005_1.setVisibility(View.VISIBLE);
+							side_b005_2.setVisibility(View.VISIBLE);
+							count = 1;
+						}
 						break;
 					case R.id.side_b005_1:
 						it.setClass(order1.this, Shopping.class);

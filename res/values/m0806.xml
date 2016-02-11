@@ -1,31 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources><string name="m0806_t001">側邊欄測試</string>
-<string name="m0806_b001">左邊欄</string>
-<string name="m0806_b002">右邊欄</string>
-<string name="side_b001">瀏覽商品</string>
-<string name="side_b002">賣東西</string>
-<string name="side_b003">搜尋商品</string>
-<string name="side_b004">邀請朋友</string>
-<string name="item1">註冊</string>
-<string name="item2">登入</string>
-<string name="item3">搜尋</string>
-<string name="sign_t002">密碼:</string>
-<string name="sign_t001">帳號:</string>
-<string name="sign_b001">登入</string>
-<string name="sign_b002">取消</string>
-<string name="sell_t001">詳細資料</string>
-<string name="sell_t002">商品名稱</string>
-<string name="sell_t003">商品價格</string>
-<string name="sell_t004">商品分類</string>
-<string name="sell_t005">圖片上傳</string>
-<string name="search_t001">快速搜尋</string>
-<string name="search_t002">多重搜尋</string>
-<string name="search_t002_01">價格範圍</string>
-<string name="search_t002_02">商品分類</string>
-<string name="tvIdTitle">訂購清單</string>
-<string name="sign_t003">姓名:</string>
-<string name="sign_t004">地址:</string>
-<string name="sign_t005">手機號碼:</string>
-<string name="sign_t006">Email:</string>
-    
+<resources>
+
+    <string name="m0806_t001">側邊欄測試</string>
+    <string name="m0806_b001">左邊欄</string>
+    <string name="m0806_b002">右邊欄</string>
+    <string name="side_b001">瀏覽商品</string>
+    <string name="side_b002">賣東西</string>
+    <string name="side_b003">搜尋商品</string>
+    <string name="side_b004">邀請朋友</string>
+    <string name="item1">註冊</string>
+    <string name="item2">登入</string>
+    <string name="item3">搜尋</string>
+    <string name="sign_t002">密碼:</string>
+    <string name="sign_t001">帳號:</string>
+    <string name="sign_b001">登入</string>
+    <string name="sign_b002">取消</string>
+    <string name="sell_t001">詳細資料</string>
+    <string name="sell_t002">商品名稱</string>
+    <string name="sell_t003">商品價格</string>
+    <string name="sell_t004">商品分類</string>
+    <string name="sell_t005">圖片上傳</string>
+    <string name="search_t001">快速搜尋</string>
+    <string name="search_t002">多重搜尋</string>
+    <string name="search_t002_01">價格範圍</string>
+    <string name="search_t002_02">商品分類</string>
+    <string name="tvIdTitle">訂購清單</string>
+    <string name="sign_t003">姓名:</string>
+    <string name="sign_t004">地址:</string>
+    <string name="sign_t005">手機號碼:</string>
+    <string name="sign_t006">Email:</string>
+
+    <string-array name="sell_list">
+        <item>男性商品</item>
+        <item>女性商品</item>
+        <item>嬰幼兒商品</item>
+        <item>美妝保養</item>
+        <item>生活3C</item>
+        <item>書籍雜誌</item>
+        <item>遊戲玩具</item>
+        <item>哩哩扣扣</item>
+    </string-array>
+
 </resources>

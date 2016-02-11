@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
+
     <drawable name="aqua">#00FFFF</drawable>
     <drawable name="black">#000000</drawable>
     <drawable name="blue">#0000FF</drawable>
@@ -13,9 +13,10 @@
     <drawable name="olive">#808000</drawable>
     <drawable name="purple">#800080</drawable>
     <drawable name="red">#FF0000</drawable>
-    <drawable name="silver">#C0C0C0</drawable><drawable name="teal">#008080</drawable>
+    <drawable name="silver">#C0C0C0</drawable>
+    <drawable name="teal">#008080</drawable>
     <drawable name="white">#FFFFFF</drawable>
     <drawable name="yellow">#FFFF00</drawable>
     <drawable name="vblue">#0848AF</drawable>
-    
+    <drawable name="bblue">#003399</drawable>
 </resources>
