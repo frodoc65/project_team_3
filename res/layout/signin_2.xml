@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/sign_t001"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_t001"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/sign_t002"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/sign_t001"
+        android:layout_marginTop="14dp"
+        android:text="@string/sign_t002"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/sign_b002"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sign_b001"
+        android:layout_alignBottom="@+id/sign_b001"
+        android:layout_toRightOf="@+id/sign_b001"
+        android:text="@string/sign_b002" />
+
+    <EditText
+        android:id="@+id/sign_et002"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sign_t002"
+        android:layout_alignBottom="@+id/sign_t002"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/sign_t002"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/sign_et001"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sign_et002"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/sign_b001"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="60dp"
+        android:text="@string/sign_b001" />
+
+    <TextView
+        android:id="@+id/sign_t003"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/sign_et002"
+        android:layout_marginTop="17dp"
+        android:text="@string/sign_t003"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <EditText
+        android:id="@+id/sign_et003"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sign_t003"
+        android:layout_alignLeft="@+id/sign_et002"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/sign_et002"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/sign_t004"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/sign_t003"
+        android:layout_marginTop="15dp"
+        android:text="@string/sign_t004"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/sign_et004"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sign_et003"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/sign_t004"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/sign_t005"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/sign_et004"
+        android:layout_marginTop="14dp"
+        android:text="@string/sign_t005"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <EditText
+        android:id="@+id/sign_et005"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/sign_t005"
+        android:layout_toRightOf="@+id/sign_t005"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/sign_t006"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:text="@string/sign_t006"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/sign_et006"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/sign_t006"
+        android:layout_toRightOf="@+id/sign_t006"
+        android:ems="10" />
+
+</RelativeLayout>

@@ -7,5 +7,7 @@
     <string name="side_b006">結帳</string>
     <string name="car_b001">取消購買</string>
     <string name="car_b002">確定購買</string>
+    <string name="side_b005_1">販賣列表</string>
+    <string name="side_b005_2">購物列表</string>
 
 </resources>

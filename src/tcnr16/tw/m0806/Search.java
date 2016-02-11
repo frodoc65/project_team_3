@@ -26,7 +26,7 @@ public class Search extends Activity {
 		getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.vblue));
 		mNav = new SimpleSideDrawer(this);
 		mNav.setLeftBehindContentView(R.layout.leftmenu);
-		initActionBar();
+		getActionBar();
         setupviewcomponent();
 	}
 	private void setupviewcomponent() {
@@ -64,10 +64,10 @@ public class Search extends Activity {
 			}
 		}
 	};
-	private void initActionBar() {
-		  getActionBar().setDisplayHomeAsUpEnabled(true);
-	      getActionBar().setHomeButtonEnabled(true);
-	      }
+//	private void initActionBar() {
+//		  getActionBar().setDisplayHomeAsUpEnabled(true);
+//	      getActionBar().setHomeButtonEnabled(true);
+//	      }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.m0806, menu);

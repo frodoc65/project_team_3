@@ -8,7 +8,9 @@ import java.util.Map;
 import com.navdrawer.SimpleSideDrawer;
 
 import android.app.*;
+import android.app.ActionBar.LayoutParams;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.*;
@@ -20,12 +22,11 @@ public class M0806 extends Activity {
 	private SimpleSideDrawer mNav;
 	private Dialog mLoginDlg;
 	private Function function;
+	public int count=0;
 	// --------------側邊按鈕宣告--------------------------------------------
 	private Button side_b001, side_b002, side_b003, side_b004, side_b005,
-			side_b006;
+			side_b005_1, side_b005_2, side_b006;
 	// --------------滑動-------------------------------------------------
-	// private float x1,x2,y1,y2,xc,yc;
-	// private float xr=90,yr=160;
 	// --------------------gridview---------------------------------------
 	private GridView gridView;
 	private int[] image = { R.drawable.n001, R.drawable.n002, R.drawable.n003,
@@ -38,21 +39,35 @@ public class M0806 extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tab1);
+		setTitle("");
 		initActionBar();// 左上小按鈕返回圖示的開關
-		setTitle("CloudStore");
 
 		mNav = new SimpleSideDrawer(this);
 		mNav.setLeftBehindContentView(R.layout.leftmenu);
-		getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.vblue));
 
+		getActionBar().setBackgroundDrawable(
+				getResources().getDrawable(R.drawable.vblue));
 		setupviewcomponent();
-
 	}
 
-	private void initActionBar() {
-		getActionBar().setDisplayHomeAsUpEnabled(true);
-		getActionBar().setHomeButtonEnabled(true);
-		
+	public void initActionBar() {
+		ActionBar actionBar = super.getActionBar();
+		actionBar.show();
+		actionBar.setDisplayShowHomeEnabled(true);
+		actionBar.setDisplayShowTitleEnabled(false);
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setDisplayShowCustomEnabled(true);
+		actionBar.setDisplayUseLogoEnabled(true);
+		TextView tvTitle = new TextView(this);
+		tvTitle.setText("Cloud Store");
+		tvTitle.setTextColor(Color.WHITE);
+		tvTitle.setTextSize(18);
+		tvTitle.setGravity(Gravity.CENTER);
+		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT,
+				LayoutParams.WRAP_CONTENT);
+		tvTitle.setLayoutParams(params);
+		actionBar.setCustomView(tvTitle);
+
 	}
 
 	public void setupviewcomponent() {
@@ -100,18 +115,27 @@ public class M0806 extends Activity {
 		side_b003 = (Button) findViewById(R.id.side_b003);
 		side_b004 = (Button) findViewById(R.id.side_b004);
 		side_b005 = (Button) findViewById(R.id.side_b005);
+		side_b005_1 = (Button) findViewById(R.id.side_b005_1);
+		side_b005_2 = (Button) findViewById(R.id.side_b005_2);
 		side_b006 = (Button) findViewById(R.id.side_b006);
+		// ------------------------------------------------
 		side_b001.setOnClickListener(side_b001on);
 		side_b002.setOnClickListener(side_b001on);
 		side_b003.setOnClickListener(side_b001on);
 		side_b004.setOnClickListener(side_b001on);
 		side_b005.setOnClickListener(side_b001on);
+		side_b005_1.setOnClickListener(side_b001on);
+		side_b005_2.setOnClickListener(side_b001on);
 		side_b006.setOnClickListener(side_b001on);
+		// --------------------------------------------------
+		side_b005_1.setVisibility(View.GONE);
+		side_b005_2.setVisibility(View.GONE);
 	}
 
 	// ----------------------------側邊欄按鈕監聽-----------------------------------
 	private OnClickListener side_b001on = new OnClickListener() {
 		Intent it = new Intent();
+//		int count = 0;
 
 		@Override
 		public void onClick(View v) {
@@ -134,45 +158,32 @@ public class M0806 extends Activity {
 				startActivity(it);
 				break;
 			case R.id.side_b005:// 買賣狀態
-				it.setClass(M0806.this, Car.class);
+				if (count == 1) {
+					side_b005_1.setVisibility(View.GONE);
+					side_b005_2.setVisibility(View.GONE);
+					count = 0;} else {
+					side_b005_1.setVisibility(View.VISIBLE);
+					side_b005_2.setVisibility(View.VISIBLE);
+					count=1;}
+				break;
+			case R.id.side_b005_1:
+				it.setClass(M0806.this, Shopping.class);
+				startActivity(it);
+				break;
+			case R.id.side_b005_2:
+				it.setClass(M0806.this, order1.class);
 				startActivity(it);
 				break;
 			case R.id.side_b006:// 結帳
 				it.setClass(M0806.this, Car.class);
 				startActivity(it);
 				break;
-
 			}
 		}
 	};
 
-	// @Override
-	// public boolean onTouchEvent(MotionEvent event) {
-	// if(event.getAction() == MotionEvent.ACTION_DOWN){
-	// //action_down手指按下
-	// x1=event.getX();
-	// y1=event.getY();
-	// }
-	// if(event.getAction() == MotionEvent.ACTION_UP){
-	// //action_up手指離開時
-	// x2=event.getX();
-	// y2=event.getY();
-	// xc=x2-x1;
-	// yc=y2-y1;
-	// if(xc > xr) ctlnext();//右
-	// if(xc < -xr) ctlprev();//左
-	// }
-	// return super.onTouchEvent(event);
-	// }
-	// public void ctlprev() {//左
-	//
-	// }
-	// private void ctlnext() {//右
-	//
-	// }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.m0806, menu);
 		return true;
 	}
@@ -182,17 +193,19 @@ public class M0806 extends Activity {
 		switch (item.getItemId()) {
 		case android.R.id.home:// 側邊欄按鈕
 			mNav.toggleLeftDrawer();
+			side_b005_1.setVisibility(View.GONE);
+			side_b005_2.setVisibility(View.GONE);
 			break;
 		case R.id.item1:// 註冊(畫面未完成lay還需增加)
 			mLoginDlg = new Dialog(M0806.this);
 			mLoginDlg.setTitle("登入系統");
 			mLoginDlg.setCancelable(true);
-			mLoginDlg.setContentView(R.layout.signin);
+			mLoginDlg.setContentView(R.layout.signin_2);
 			mLoginDlg.show();
 			break;
 		case R.id.item2:// 登入(sqlite配套未完成)
 			mLoginDlg = new Dialog(M0806.this);
-			mLoginDlg.setTitle("登入系統");
+			mLoginDlg.setTitle("註冊系統");
 			mLoginDlg.setCancelable(true);
 			mLoginDlg.setContentView(R.layout.signin);
 			mLoginDlg.show();
